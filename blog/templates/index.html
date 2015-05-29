@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title></title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p>It's Working.............................</p>
+    </div>
+    {{ content }}
+
+</body>
+</html>
