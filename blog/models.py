@@ -8,7 +8,7 @@ class Post(models.Model):
     created_date=models.DateTimeField(default=timezone.now)
     published_date=models.DateTimeField(blank=True, null=True)
 
-    def published_date(self):
+    def publish(self):
         '''
         This method is use to Auto-Fill the published_date field
         of the Post class i.e our model
@@ -16,6 +16,9 @@ class Post(models.Model):
         self.published_date=timezone.now()
         self.save()
 
+    def save(self,*args, **kwargs):
+        #self.publish()
+        super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title

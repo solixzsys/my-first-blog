@@ -13,26 +13,16 @@
         <h1><a href="#">Django Girl Blog</a></h1>
 
     </div>
+    {%for c in posts%}
     <div>
-        <p>published on: 27.06.2015, 10:55</p>
-        <h2>My First Blog</h2>
+        <p>created on: {{c.created_date}}</p>
+        <h2>{{c.title}}</h2>
         <p>
-            Bacon ipsum dolor amet corned beef swine venison pork capicola fatback, tail turkey shankle ribeye salami sausage. Strip steak ribeye alcatra flank biltong drumstick. Rump kielbasa ball tip, pancetta alcatra brisket tenderloin pork loin tri-tip chuck shank leberkas picanha pork chop. Andouille shank salami pork loin cow spare ribs t-bone ground round kielbasa. Chuck pork belly cupim pig frankfurter, ribeye kielbasa shank drumstick. Doner sausage hamburger pig rump bacon.
-
-Beef sirloin alcatra ham, pork drumstick leberkas shank short ribs. Venison landjaeger drumstick biltong short ribs jowl porchetta doner shankle flank corned beef. Filet mignon tongue venison short loin pig, beef ribs hamburger ham hock salami kevin turducken chuck bresaola picanha. Shankle andouille corned beef cow, strip steak meatloaf picanha rump ham hock capicola boudin leberkas ball tip. Pork short ribs chicken rump pork chop porchetta brisket kevin. Meatloaf sausage turducken jowl salami short ribs shoulder cupim andouille shank picanha.
+            {{c.text}}
         </p>
 
     </div>
-    <div>
-        <p>published on: 28.06.2015, 10:55</p>
-        <h2>My Second Blog</h2>
-        <p>
-            Bacon ipsum dolor amet corned beef swine venison pork capicola fatback, tail turkey shankle ribeye salami sausage. Strip steak ribeye alcatra flank biltong drumstick. Rump kielbasa ball tip, pancetta alcatra brisket tenderloin pork loin tri-tip chuck shank leberkas picanha pork chop. Andouille shank salami pork loin cow spare ribs t-bone ground round kielbasa. Chuck pork belly cupim pig frankfurter, ribeye kielbasa shank drumstick. Doner sausage hamburger pig rump bacon.
-
-Beef sirloin alcatra ham, pork drumstick leberkas shank short ribs. Venison landjaeger drumstick biltong short ribs jowl porchetta doner shankle flank corned beef. Filet mignon tongue venison short loin pig, beef ribs hamburger ham hock salami kevin turducken chuck bresaola picanha. Shankle andouille corned beef cow, strip steak meatloaf picanha rump ham hock capicola boudin leberkas ball tip. Pork short ribs chicken rump pork chop porchetta brisket kevin. Meatloaf sausage turducken jowl salami short ribs shoulder cupim andouille shank picanha.
-        </p>
-
-    </div>
+   {% endfor %}
 
 </body>
 </html>
