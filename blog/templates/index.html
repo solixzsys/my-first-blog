@@ -3,26 +3,35 @@
     <title>DjangoGirl Blog</title>
 
     {% load staticfiles %}
+    <link	href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"	rel="stylesheet"	type="text/css" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/blog.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
 </head>
 
 <body>
-    <div >
+    <div class="page-header">
         <h1><a href="#">Django Girl Blog</a></h1>
 
     </div>
-    {%for c in posts%}
-    <div>
-        <p>created on: {{c.created_date}}</p>
-        <h2>{{c.title}}</h2>
-        <p>
-            {{c.text}}
-        </p>
 
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {%for c in posts%}
+                <div class="post">
+                    <p>published on: {{c.published_date}}</p>
+                    <h2><a href="#">{{c.title}}</a></h2>
+                    <p>
+                        {{c.text|linebreaksbr}}
+                    </p>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-   {% endfor %}
-    What is going on ????
+
 </body>
 </html>
