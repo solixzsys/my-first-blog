@@ -67,6 +67,8 @@
     <Folder Include="DjangoGirl\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blog\templates\base.html" />
+    <Content Include="blog\static\app\content\blog.css" />
     <Content Include="blog\static\app\content\bootstrap.css" />
     <Content Include="blog\static\app\content\bootstrap.min.css" />
     <Content Include="blog\static\app\content\site.css" />
@@ -89,6 +91,7 @@
     <Content Include="blog\static\app\scripts\modernizr-2.6.2.js" />
     <Content Include="blog\static\app\scripts\respond.js" />
     <Content Include="blog\static\app\scripts\respond.min.js" />
+    <Content Include="blog\templates\detail.html" />
     <Content Include="blog\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />

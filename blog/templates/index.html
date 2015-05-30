@@ -1,37 +1,14 @@
-<html>
-<head>
-    <title>DjangoGirl Blog</title>
-
-    {% load staticfiles %}
-    <link	href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"	rel="stylesheet"	type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/blog.css' %}" />
-    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
-</head>
-
-<body>
-    <div class="page-header">
-        <h1><a href="#">Django Girl Blog</a></h1>
-
-    </div>
-
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
+{% extends 'base.html' %}
+{% block content%}
                 {%for c in posts%}
                 <div class="post">
-                    <p>published on: {{c.published_date}}</p>
-                    <h2><a href="#">{{c.title}}</a></h2>
+                    <div class="date">published on: {{c.published_date}}</div>
+                    <h2><a href="{% url 'blog.views.post_detail' pk=c.pk %}">{{c.title}}</a></h2>
                     <p>
                         {{c.text|linebreaksbr}}
                     </p>
 
                 </div>
                 {% endfor %}
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+{% endblock %}
+            
