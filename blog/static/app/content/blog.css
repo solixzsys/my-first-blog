@@ -23,14 +23,21 @@ text-decoration:	none;
 }
 .content	{
 
-margin-right:20px;
+margin:auto;
 
 }
 h1,	h2,	h3,	h4	{
 font-family:	'Lobster',	cursive;
 }
-.date	{
+.rfloat 	{
 float:	right;
+color:	#828282;
+}
+
+
+
+.publisher	{
+float:	left;
 color:	#828282;
 }
 .save	{

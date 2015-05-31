@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% block content%}
-                
-                <div class="post">
-                    <div class="date">published on: {{post.published_date}}</div>
-                    <h2>{{post.title}}</h2>
-                    <p>
-                        {{post.text|linebreaksbr}}
-                    </p>
 
-                </div>
-                
+<div class="post">
+    <div class="rfloat">
+        <span class="date">published on: {{post.published_date}}</span>
+        <span class="editbtn"> <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk%}"><span class="glyphicon glyphicon-pencil"></span> </a> </span>
+
+    </div>
+
+    <h2>{{post.title}}</h2>
+    <p>
+        {{post.text|linebreaksbr}}
+    </p>
+    <div class="publisher">Published by: {{post.author.username}}</div>
+
+</div>
+
 {% endblock %}
-            

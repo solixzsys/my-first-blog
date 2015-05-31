@@ -35,6 +35,9 @@
     <Compile Include="blog\admin.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="blog\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blog\models.py" />
     <Compile Include="blog\tests.py" />
     <Compile Include="blog\urls.py">
@@ -91,6 +94,7 @@
     <Content Include="blog\static\app\scripts\modernizr-2.6.2.js" />
     <Content Include="blog\static\app\scripts\respond.js" />
     <Content Include="blog\static\app\scripts\respond.min.js" />
+    <Content Include="blog\templates\post_edit.html" />
     <Content Include="blog\templates\detail.html" />
     <Content Include="blog\templates\index.html" />
     <Content Include="requirements.txt" />
