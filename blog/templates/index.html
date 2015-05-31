@@ -2,7 +2,9 @@
 {% block content%}
                 {%for c in posts%}
                 <div class="post">
-                    <div class="date">published on: {{c.published_date}}</div>
+                    {% if c.published_date %}
+                        <div class="date">published on: {{c.published_date}}</div>
+                    {% endif %}
                     <h2><a href="{% url 'blog.views.post_detail' pk=c.pk %}">{{c.title}}</a></h2>
                     <p>
                         {{c.text|linebreaksbr}}

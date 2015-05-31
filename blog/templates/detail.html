@@ -3,8 +3,13 @@
 
 <div class="post">
     <div class="rfloat">
+        {% if post.published_date %}
         <span class="date">published on: {{post.published_date}}</span>
+        {%else%}
+         <span class="editbtn"> <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk%}">Publish</a> </span>
+        {% endif %}
         <span class="editbtn"> <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk%}"><span class="glyphicon glyphicon-pencil"></span> </a> </span>
+        <span class="editbtn"> <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk%}"><span class="glyphicon glyphicon-remove-circle"></span> </a> </span>
 
     </div>
 
