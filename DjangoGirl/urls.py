@@ -9,6 +9,7 @@ from app.forms import BootstrapAuthenticationForm
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
 from django.contrib import admin
+from django.contrib.auth.views import login
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -41,4 +42,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'',include('blog.urls')),   
      url(r'^admin/', include(admin.site.urls)),
+     url(r'^account/login/$',login),
 )
