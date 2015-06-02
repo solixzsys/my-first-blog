@@ -67,6 +67,7 @@
     <Folder Include="blog\static\app\fonts\" />
     <Folder Include="blog\static\app\scripts\" />
     <Folder Include="blog\templates\" />
+    <Folder Include="blog\templates\registration\" />
     <Folder Include="DjangoGirl\" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,8 @@
     <Content Include="blog\templates\post_edit.html" />
     <Content Include="blog\templates\detail.html" />
     <Content Include="blog\templates\index.html" />
+    <Content Include="blog\templates\registration\logout.html" />
+    <Content Include="blog\templates\registration\login.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

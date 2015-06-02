@@ -8,13 +8,77 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/blog.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+   
+    <script src="../static/app/scripts/jquery-1.10.2.min.js"></script>"
+    <script>
+        $(document).ready(function(){
+            $("#login_form").hide(1000)
+            console.log("xxxxxxxxxxx")
+            
+
+        });
+        $(document).ready(function () {
+            $("#smtbtn").hide(1000)
+            console.log("xxxxxxxxxxx")
+
+
+        });
+        $(document).ready(function () {
+            $("#btnlog").click(function () {
+                $("#login_form").show(1000)
+
+            })
+            
+
+
+        });
+    </script>
+
 </head>
 
 <body>
-    <div class="page-header">        
-        <a href="{% url 'blog.views.post_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-        <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        
+    <div class="page-header">
+
+        <div>
+            {% if user.is_authenticated %}
+            <div style="float:right; margin-right:20px; font-family:Marlett">Welcome {{user}}</div>
+
+            <div style="clear:right">
+                <a href="{% url 'blog.views.post_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <!--
+                <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
+                -->
+                <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"></span></a>
+            </div>
+            {% else %}
+
+
+
+
+
+            <nav style="float:right; margin-right:20px; font-family:Lobster">
+                <div>
+                    <div>Welcome, Pls</div>
+                </div>
+                <div>
+                    <span id="btnlog"><a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-default">Login</a></span>
+                    <span>or</a></span>
+                    <span><a href="#" class="btn btn-default">Register</a></span>
+                </div>
+
+                <div id="login_form" style="background-color:#00ff21; float:right">
+                    <form id="login_form" class="navbar-form navbar-left" role="search" >
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button id="smtbtn" type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </nav>
+
+            {% endif %}
+        </div>
         <h1><a href="{% url 'blog.views.post_list' %}">Django Girl Blog</a></h1>
     </div>
 
@@ -27,6 +91,7 @@
             </div>
         </div>
     </div>
+
 
 </body>
 </html>

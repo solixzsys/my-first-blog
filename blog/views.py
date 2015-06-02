@@ -3,6 +3,7 @@ from blog.models import Post
 from django.utils import timezone
 from blog.forms import PostForm
 from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import logout
 
 def post_list(request):
     posts=Post.objects.filter(published_date__lt=timezone.now()).order_by("-published_date")
@@ -62,4 +63,9 @@ def post_publish(request,pk):
 def post_remove(request,pk):
     post=get_object_or_404(Post,pk=pk)
     post.delete()
+    return redirect("/")
+
+
+def mylogout(request):
+    logout(request)
     return redirect("/")
