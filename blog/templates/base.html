@@ -9,29 +9,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/blog.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
    
-    <script src="../static/app/scripts/jquery-1.10.2.min.js"></script>"
-    <script>
-        $(document).ready(function(){
-            $("#login_form").hide(1000)
-            console.log("xxxxxxxxxxx")
+    <script src="../static/app/scripts/jquery-1.10.2.min.js"> </script>
+   <script>
+       $(document).ready(function () {
+           $("#login_form").css("visibility","hidden")
+           $("#btnlog").click(function () {
+               $("#login_form").css("visibility", "visible")
+           })
+
+
             
 
-        });
-        $(document).ready(function () {
-            $("#smtbtn").hide(1000)
-            console.log("xxxxxxxxxxx")
+       });
+       
+       $(document).ready(function () {
+       $("#sign_in").click(function () {
+           alert("tryuty")
+           $("#login_form").css("visibility", "hidden")
+       })
+       });
 
-
-        });
-        $(document).ready(function () {
-            $("#btnlog").click(function () {
-                $("#login_form").show(1000)
-
-            })
-            
-
-
-        });
+        
     </script>
 
 </head>
@@ -57,29 +55,49 @@
 
 
 
-            <nav style="float:right; margin-right:20px; font-family:Lobster">
+            <div style="float:right; clear:both; margin-right:20px; font-family:Lobster">
                 <div>
                     <div>Welcome, Pls</div>
                 </div>
                 <div>
-                    <span id="btnlog"><a href="{% url 'django.contrib.auth.views.login' %}" class="btn btn-default">Login</a></span>
+                    <span id="btnlog"><a href="#" class="btn btn-default">Login</a></span>
                     <span>or</a></span>
-                    <span><a href="#" class="btn btn-default">Register</a></span>
+                    <span id="reg"><a href="#" class="btn btn-default">Register</a></span>
+                </div>
+                <div   id="login_form" style="float:right; margin-top:10px  ">
+                   
+                    <form class="form-horizontal">
+                          <div class="form-group">
+   
+                            <div class="col-sm-12">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="Email or Username">
+                            </div>
+                          </div>
+                          <div class="form-group">
+   
+                            <div class="col-sm-12">
+                              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                          </div>
+  
+                      <div class="form-group">
+                        <div class="col-sm-10">
+                          <span id="sign_in"><a href="#" class="btn btn-default">Sign in</a></span>
+                        </div>
+                      </div>
+                    </form>
+
+
                 </div>
 
-                <div id="login_form" style="background-color:#00ff21; float:right">
-                    <form id="login_form" class="navbar-form navbar-left" role="search" >
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button id="smtbtn" type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
-            </nav>
+
+            </div>
 
             {% endif %}
         </div>
+
         <h1><a href="{% url 'blog.views.post_list' %}">Django Girl Blog</a></h1>
+
     </div>
 
     <div class="content container">
