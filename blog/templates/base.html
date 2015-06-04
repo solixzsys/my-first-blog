@@ -11,35 +11,40 @@
    
     <script src="../static/app/scripts/jquery-1.10.2.min.js"> </script>
    <script>
+       var logform = ""
+       var mcontainer=""
        $(document).ready(function () {
-           $("#login_form").css("visibility","hidden")
+            logform = $("#login_form")
+            mcontainer = $("#m_container")
+            $("#login_form").remove()
+
+           
+           //$(document).on("click", "#sig", function () {
+           //    $("#login_form").remove()
+           //});
+       
            $("#btnlog").click(function () {
-               $("#login_form").css("visibility", "visible")
-           })
+               mcontainer.append(logform)
+               
+           });
+      
+           $("#reg").click(function () {
 
-
-            
-
+               alert("ggg");
+           });
        });
        
-       $(document).ready(function () {
-       $("#sign_in").click(function () {
-           alert("tryuty")
-           $("#login_form").css("visibility", "hidden")
-       })
-       });
-
         
     </script>
 
 </head>
 
 <body>
-    <div class="page-header">
+    <div class="page-header" style="overflow:auto">
 
         <div>
             {% if user.is_authenticated %}
-            <div style="float:right; margin-right:20px; font-family:Marlett">Welcome {{user}}</div>
+            <div style="float:right; margin-right:20px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Welcome {{user}}</div>
 
             <div style="clear:right">
                 <a href="{% url 'blog.views.post_draft' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -55,7 +60,7 @@
 
 
 
-            <div style="float:right; clear:both; margin-right:20px; font-family:Lobster">
+            <div id="m_container" style="float:right; clear:both; margin-right:20px; font-family:Lobster">
                 <div>
                     <div>Welcome, Pls</div>
                 </div>
@@ -66,27 +71,20 @@
                 </div>
                 <div   id="login_form" style="float:right; margin-top:10px  ">
                    
-                    <form class="form-horizontal">
-                          <div class="form-group">
-   
-                            <div class="col-sm-12">
-                              <input type="email" class="form-control" id="inputEmail3" placeholder="Email or Username">
-                            </div>
-                          </div>
-                          <div class="form-group">
-   
-                            <div class="col-sm-12">
-                              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                            </div>
-                          </div>
-  
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <span id="sign_in"><a href="#" class="btn btn-default">Sign in</a></span>
-                        </div>
-                      </div>
+                   
+                    <form role="form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+                        {% csrf_token %}
+	                    <div class="form-group">
+		                    <label class="control-label" for="username">UserName</label>
+		                    <input type="text" class="form-control" name="username" id="username" placeholder="User Name">
+	
+		                    <label class="control-label" for="password">Password</label>
+		                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+	                    </div>
+	
+	                    <button  type="submit" class="btn btn-default">Submit</button>
+                        <input	type="hidden"	name="next"	value="{{	next	}}"	/>
                     </form>
-
 
                 </div>
 

@@ -29,7 +29,7 @@ DATABASES = {
     }
 }
 
-LOGIN_URL = '/login'
+LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # Local time zone for this installation. Choices can be found here:

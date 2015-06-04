@@ -2,7 +2,7 @@
 {% block content%}
 
 {% if form.errors %}
-You have entered wrong username or Password, please try again
+You have entered wrong username or Password, please try again OR Register
 
 {% endif %}
 <form role="form" method="post" action="{% url 'django.contrib.auth.views.login' %}">
@@ -16,6 +16,7 @@ You have entered wrong username or Password, please try again
 	</div>
 	
 	<button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default">Register</button>
     <input	type="hidden"	name="next"	value="{{	next	}}"	/>
 </form>
 

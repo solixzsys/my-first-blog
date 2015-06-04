@@ -42,6 +42,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'',include('blog.urls')),   
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^account/login/$','django.contrib.auth.views.login'),
+     url(r'^account/login/$','django.contrib.auth.views.login',name="login_url"),
      
 )
