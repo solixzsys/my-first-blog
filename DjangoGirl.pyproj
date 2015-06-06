@@ -100,6 +100,7 @@
     <Content Include="blog\static\app\scripts\modernizr-2.6.2.js" />
     <Content Include="blog\static\app\scripts\respond.js" />
     <Content Include="blog\static\app\scripts\respond.min.js" />
+    <Content Include="blog\templates\cta.kml" />
     <Content Include="blog\templates\map.html" />
     <Content Include="blog\templates\post_edit.html" />
     <Content Include="blog\templates\detail.html" />
