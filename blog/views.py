@@ -72,3 +72,6 @@ def mylogout(request):
 
 def map(request):
     return render(request,"map.html",{})
+
+def mapkml(request):
+    return render(request,"cta.kml",{})
