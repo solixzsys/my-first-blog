@@ -72,7 +72,9 @@
     <Folder Include="DjangoGirl\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blog\static\map\cta.kml" />
     <Content Include="blog\static\map\phase.kmz" />
+    <Content Include="blog\static\map\practice 2_fromearth.kml" />
     <Content Include="blog\static\map\practice.kmz" />
     <Content Include="blog\templates\base.html" />
     <Content Include="blog\static\app\content\blog.css" />
