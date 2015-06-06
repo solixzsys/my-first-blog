@@ -66,11 +66,14 @@
     <Folder Include="blog\static\app\content\" />
     <Folder Include="blog\static\app\fonts\" />
     <Folder Include="blog\static\app\scripts\" />
+    <Folder Include="blog\static\map\" />
     <Folder Include="blog\templates\" />
     <Folder Include="blog\templates\registration\" />
     <Folder Include="DjangoGirl\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blog\static\map\phase.kmz" />
+    <Content Include="blog\static\map\practice.kmz" />
     <Content Include="blog\templates\base.html" />
     <Content Include="blog\static\app\content\blog.css" />
     <Content Include="blog\static\app\content\bootstrap.css" />
