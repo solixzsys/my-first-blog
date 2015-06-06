@@ -74,4 +74,4 @@ def map(request):
     return render(request,"map.html",{})
 
 def mapkml(request):
-    return render(request,"cta.kml",{})
+    return render(request,"practice 2_fromearth.kml",{})

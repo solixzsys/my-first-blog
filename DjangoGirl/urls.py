@@ -45,6 +45,6 @@ urlpatterns = patterns('',
      url(r'^account/login/$','django.contrib.auth.views.login',name="login_url"),
      url(r'^map/$','blog.views.map',name="map"),
      
-     url(r'^/static/map/cta.kml$','blog.views.mapkml'),
+     url(r'^/static/map/practice 2_fromearth.kml$','blog.views.mapkml'),
      
 )
