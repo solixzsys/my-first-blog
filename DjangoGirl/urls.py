@@ -43,5 +43,6 @@ urlpatterns = patterns('',
      url(r'',include('blog.urls')),   
      url(r'^admin/', include(admin.site.urls)),
      url(r'^account/login/$','django.contrib.auth.views.login',name="login_url"),
+     url(r'^map/$','blog.views.map',name="map"),
      
 )

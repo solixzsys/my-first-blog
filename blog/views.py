@@ -69,3 +69,6 @@ def post_remove(request,pk):
 def mylogout(request):
     logout(request)
     return redirect("/")
+
+def map(request):
+    return render(request,"map.html",{})
