@@ -24,7 +24,7 @@
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
           var ctaLayer = new google.maps.KmlLayer({
-              url: 'http://soliu.pythonanywhere.com/static/map/practice 2_fromearth.kml'
+              url: 'http://soliu.pythonanywhere.com/static/map/phase.kmz'
           });
           ctaLayer.setMap(map);
       }
@@ -34,7 +34,7 @@
 </head>
 <body>
     
-<a href='https://drive.google.com/file/d/0B65oNZ05gdUKZ09tblRSZW5heGM/view?usp=sharing'>phase.kmz</a>
+<a href='{% static "map/phase.kmz" %}'>phase.kmz</a>
 <a href="../static/map/practice.kmz">practice.kmz</a>
 <a href='{% static "map/cta.kml" %}'>../static/map/cta.kml</a>
 <a href='{% static "map/practice 2_fromearth.kml" %}'>../static/map/practice 2_fromearth.kml</a>
