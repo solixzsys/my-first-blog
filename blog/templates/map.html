@@ -24,9 +24,13 @@
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
           var ctaLayer = new google.maps.KmlLayer({
-              url: 'https://www.facebook.com/mth.kml'
+              url: 'https://docs.google.com/uc?export=download&id=0B65oNZ05gdUKUk1SVnlUUVdSc0U'
           });
-          ctaLayer.setMap(map);
+          //ctaLayer.setMap(map);
+          var ctaLayer2 = new google.maps.KmlLayer({
+              url: 'https://docs.google.com/uc?export=download&id=0B65oNZ05gdUKRm81ekFrUUhtZWc'
+          });
+          ctaLayer2.setMap(map);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -35,6 +39,7 @@
 <body>
     
 <a href='{% static "map/phase.kmz" %}'>phase.kmz</a>
+    <a href='{% static "map/legend1.png" %}'>legend1</a>
 <a href="../static/map/practice.kmz">practice.kmz</a>
 <a href='{% static "map/cta.kml" %}'>../static/map/cta.kml</a>
 <a href='{% static "map/practice 2_fromearth.kml" %}'>../static/map/practice 2_fromearth.kml</a>

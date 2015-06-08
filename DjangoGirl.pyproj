@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="blog\static\map\cta.kml" />
+    <Content Include="blog\static\map\legend1.png" />
     <Content Include="blog\static\map\phase.kmz" />
     <Content Include="blog\static\map\practice 2_fromearth.kml" />
     <Content Include="blog\static\map\practice.kmz" />
