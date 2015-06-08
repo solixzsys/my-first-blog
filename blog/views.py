@@ -73,7 +73,7 @@ def mylogout(request):
 def map(request):
     return render(request,"map.html",{})
 
-def mapkml(request,mapfile):
+def mapkml(request,mapf):
     #print (mapfile)
     #return render(request,mapfile,{})
-    redirect(mapfile)
+    redirect(mapf)
