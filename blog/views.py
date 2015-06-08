@@ -75,5 +75,5 @@ def map(request):
 
 def mapkml(request,mapf):
     #print (mapfile)
-    #return render(request,mapfile,{})
-    redirect(mapf)
+    return render(request,mapf,{})
+    #redirect(mapf)
